@@ -17,9 +17,13 @@ import HeaderButton from '../button/headerbutton'
 import huaweilogo from '../../../assets/image 9.png'
 import razerlogo from '../../../assets//Razer-Inc.-Logo-Vector-removebg-preview 1.png'
 
+import { useHandleNavigate } from '@/components/HandleNavigate'
+
 
 
 const HeaderShopOverButton = () => {
+
+    const navigate = useHandleNavigate()
 
     return (
         <Popover>
@@ -29,11 +33,13 @@ const HeaderShopOverButton = () => {
             <PopoverContent className='data-[state=open]:slide-in-from-bottom-20 data-[state=closed]:slide-out-to-bottom-20 data-[state=closed]:zoom-out-100 data-[state=open]:zoom-in-100 w-80 duration-400'>
                 <div className='grid gap-4'>
                     <div className='space-y-1 flex flex-row justify-around'>
-                        <HeaderButton name="Infinix"/>
-                        <HeaderButton name="Huawei" img={huaweilogo}/>
+                        <HeaderButton name="Infinix" onClick={() => navigate('/brand')}/>
+                        <HeaderButton name="Huawei" img={huaweilogo}
+                        onClick={() => navigate('/brand')}/>
                     </div>
                     <div className="flex flex-row justify-center">
-                        <HeaderButton name="Razer" img={razerlogo}/>
+                        <HeaderButton name="Razer" img={razerlogo}
+                        onClick={() => navigate('/brand')}/>
                     </div>
                 </div>
             </PopoverContent>
