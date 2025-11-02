@@ -1,0 +1,86 @@
+/* /* header container */
+#headers-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+
+} 
+
+
+
+/* right side header */
+#headerRightside-container button {
+    border: none;
+    background: none;
+    font-family: 'Red Rose', serif;
+    width: 125px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+#headerRightside-container {
+    display: flex;
+    gap: 10px;
+}
+
+#headerRightside-container button:hover {
+    background-color: black;
+    color: white;
+} 
+
+
+#headerRightside {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+}
+
+/* middle  */
+#logo-container label {
+    font-family: 'Red Rose', serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* left side header */ 
+#headerLeftside {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+#headerLeftside-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#headerLeftside button {
+    border: none;
+    background: none;
+    font-family:'Red Rose', serif;
+    width: 75px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+#cart-btn:hover, #profile-btn:hover {
+    border-radius: 10px;
+    border: solid 1px black;
+}

@@ -2,10 +2,15 @@ import './styles/content.css'
 
 import { MoveLeft } from 'lucide-react'
 import { CartItemCard } from '../../components/cartitem-card'
+import { useHandleNavigate } from '../../components/HandleNavigate'
 
+import CartBuyNow from '../../components/shadcn-studio/button/cartbuynowbutton'
+import ContinueShoppingButton from '@/components/shadcn-studio/button/continueshoppingbutton'
 import backimg from './imgs/Right Arrow.png'
 
 export function CartPage() {
+    const navigate = useHandleNavigate()
+
     const cartItems = [
         { id: 1, image: 'images/productlaptop.png', name: 'RAZER Blade 18 GeForce RTX 5070 Ti', color: 'Black', price: '214,900.00', qty: 2 },
         { id: 2, image: 'images/productlaptop.png', name: 'Another Laptop', color: 'Silver', price: '89,999.00', qty: 1 },
@@ -13,21 +18,20 @@ export function CartPage() {
 
 
     return (
-        <div className="flex flex-col items-left font-poppins">
-            <label className="pageTitle-lbl text-[40px] font-red-rose mt-[25px] mb-[50px]" aria-label="check out">
+        <div className="flex flex-col items-left font-poppins ">
+            <label className="pageTitle-lbl text-[40px] font-red-rose mt-[25px] mb-[50px] ml-[50px]" aria-label="check out">
                 SHOPPING CART
             </label>
 
 
-            <main className="cart-container border border-black w-full max-w-[1250px] p-8 flex flex-col">
+            <main className="border border-black w-[1800px] h-[1250px]  p-8 flex flex-col ml-[50px] mb-[50px]">
                 <div className="cartTop-container flex flex-row justify-between items-center mb-4">
                     <label className="text-base">My Cart (<span id="cartItemAMT">{cartItems.length}</span>)</label>
 
 
-                    <button id="continueShopping-btn" className="continueShopping-btn flex flex-row items-center justify-center gap-2 bg-white cursor-pointer font-bold text-sm px-4 py-2" title="Continue shopping">
-                        <MoveLeft className=""></MoveLeft>
-                        <span>Continue Shopping</span>
-                    </button>
+                    <ContinueShoppingButton name="Continue Shopping"
+                    onClick={() => navigate('/home')}/>
+
                 </div>
 
 
@@ -56,7 +60,7 @@ export function CartPage() {
 
 
                 <div className="cartbottom-container mt-6 text-right">
-                    <button className="buynow-btn bg-black text-white font-poppins text-[24px] px-5 py-2">Buy now</button>
+                    <CartBuyNow name="Buy now" onClick={() => navigate('/checkout')}/>
                 </div>
             </main>
         </div>
