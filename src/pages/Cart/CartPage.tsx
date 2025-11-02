@@ -11,13 +11,8 @@ import CartBuyNow from '../../components/shadcn-studio/button/cartbuynowbutton'
 import ContinueShoppingButton from '@/components/shadcn-studio/button/continueshoppingbutton'
 import backimg from './imgs/Right Arrow.png'
 
-interface OrderItem {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  quantity: number;
-}
+// Types
+import type { OrderItem } from "@/types";
 
 export function CartPage() {
     const navigate = useHandleNavigate();
