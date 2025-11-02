@@ -2,11 +2,12 @@ import carticon from '../assets/Shopping Bag.png'
 import usericon from '../assets/User.png'
 import { useNavigate } from 'react-router-dom'
 
-
+import CartButton from './shadcn-studio/button/cartbutton'
 import HeaderButton from './shadcn-studio/button/headerbutton'
 import HeaderIconButton from './shadcn-studio/button/headerbuttonwithicon'
 import UserPopOver from './shadcn-studio/popover/userpopover'
 import HeaderShopOverButton from './shadcn-studio/popover/headershopnowpopover'
+import CartBadge from './shadcn-studio/badge/cartbadge'
 
 import { useHandleNavigate} from './HandleNavigate'
 
@@ -41,8 +42,7 @@ export function Header() {
 
                 {/* right side icons */}
                 <div className="flex items-center gap-3 flex-1 justify-end">
-                    <HeaderIconButton src={carticon} alt="Shopping cart" title="Cart"
-                    onClick={() => navigate('/cart')} />
+                    <CartBadge/>
                     <UserPopOver/>
                 </div>
             </header>

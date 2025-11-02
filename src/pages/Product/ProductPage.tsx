@@ -1,13 +1,16 @@
 import productimg from './imgs/Rectangle 4.png';
 import subimg from './imgs/Rectangle 4.png';
 import ProductSelection from '../../components/productselection'
-
+import BuyNowButton from '@/components/shadcn-studio/button/productbuynowbutton';
+import AddCartButton from '@/components/shadcn-studio/button/productaddcart';
+import { useHandleNavigate } from '@/components/HandleNavigate';
 
 // import './styles/pbodycontent.css'
 
 export function ProductPage() {
 
     const images = [productimg, productimg, productimg]
+    const navigate = useHandleNavigate()
 
     return (
         <>
@@ -168,13 +171,8 @@ export function ProductPage() {
                         </div>
 
                         <div className="mt-[25px] flex flex-row gap-[10px]">
-                            <button id="addcart-btn" className="font-bold rounded px-[15px] py-[10px] border-0 cursor-pointer bg-black text-white" data-set="add to cart" aria-label="Add Cart">
-                                Add to cart
-                            </button>
-
-                            <button id="buynow-btn" className="font-bold rounded px-[15px] py-[10px] border-0 cursor-pointer bg-[#F1F1F1]" data-set="add to cart" aria-label="Buy now">
-                                Buy now
-                            </button>
+                            <AddCartButton name="Add to cart"/> 
+                            <BuyNowButton name="Buy now" onClick={() => navigate('/checkout')}/>
                         </div>
                     </div>
                 </div>
