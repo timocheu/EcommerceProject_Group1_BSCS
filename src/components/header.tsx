@@ -21,7 +21,7 @@ export function Header() {
             <header className="flex items-center justify-between w-screen border py-[10px] px-[20px] bg-white">
                 {/* left / nav */}
                 <nav className="flex gap-2.5">
-                    <HeaderButton name="Home" onClick={() => navigate("/home")} />
+                    <HeaderButton name="Home" onClick={() => navigate("/")} />
                     <HeaderShopOverButton/>
                     <HeaderButton name="Contact" />
                 </nav>
