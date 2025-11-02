@@ -118,3 +118,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+body { 
+  padding: 0px;
+}
+
+@keyframes scrollLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* move left by exactly half (first set) */
+}
+
+/* utility class used above */
+.animate-scrollLoop {
+  animation: scrollLoop 22s linear infinite; /* tweak 22s for speed */
+}

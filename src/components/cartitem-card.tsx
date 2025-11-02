@@ -2,7 +2,19 @@ import '../pages/Cart/styles/content.css'
 import addimg from '../pages/Cart/imgs/add.png'
 import subtractimg from '../pages/Cart/imgs/Trash.png'
 
-export function CartItemCard(
+type CartItemCardProps = {
+  id?: string | number
+  image?: string
+  name?: string
+  color?: string
+  price?: string | number // allow string like "214,900.00" or number
+  qty?: number
+  onAdd?: () => void
+  onReduce?: () => void
+}
+
+
+export function CartItemCard({
     image = 'images/productlaptop.png',
     name = 'RAZER Blade 18 GeForce RTX 5070 Ti',
     color = 'Black',
@@ -10,7 +22,7 @@ export function CartItemCard(
     qty = 2,
     onAdd = () => { },
     onReduce = () => { }
-) {
+}:CartItemCardProps){
     const total = (Number(price.toString().replace(/[,₱\s]/g, '')) * qty).toLocaleString();
 
     return (

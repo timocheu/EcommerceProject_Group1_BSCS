@@ -14,7 +14,7 @@ export function BrandPage() {
 
 
                 <section className="bpbrandproducts-container flex flex-col justify-center items-center">
-                    <div className="bpbrandproductscontent grid grid-cols-2 gap-[60px]">
+                    <div className="bpbrandproductscontent grid grid-cols-2 gap-[60px] mb-[50px]">
                         <ProductCard />
                         <ProductCard />
 
