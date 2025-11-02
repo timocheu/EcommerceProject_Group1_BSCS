@@ -1,4 +1,3 @@
-
 import carticon from '../assets/Shopping Bag.png'
 import usericon from '../assets/User.png'
 import { useNavigate } from 'react-router-dom'
@@ -18,7 +17,7 @@ export function Header() {
     return (
 
         <>
-            <header className="flex items-center justify-between w-screen border py-[10px] px-[20px] bg-white">
+            <header className="flex items-center justify-self-center justify-between w-95/100 border py-[10px] px-[20px] bg-white">
                 {/* left / nav */}
                 <nav className="flex gap-2.5">
                     <HeaderButton name="Home" onClick={() => navigate("/")} />
