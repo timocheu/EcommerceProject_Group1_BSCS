@@ -17,7 +17,6 @@ import SeeMoreButton from '../../components/shadcn-studio/button/seemorebutton'
 
 
 import { Header } from '../../components/header'
-import { Footer } from '../../components/footer'
 import { useHandleNavigate } from '../../components/HandleNavigate'
 
 

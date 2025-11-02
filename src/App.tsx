@@ -8,7 +8,7 @@ import { CartPage } from "./pages/Cart/CartPage";
 import { HomePage } from "./pages/Home/Home";
 
 import  { Header } from "./components/header"
-import { Footer } from "./components/footer"
+import { FooterSection } from "@/components/footer"
 import { ScrollToTop } from "./components/scrolltotop";
 
 import  NotFound from "@/pages/NotFound.tsx";
@@ -28,7 +28,7 @@ function App() {
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
-      <Footer/>
+      <FooterSection/>
     </BrowserRouter>
   )
 }
