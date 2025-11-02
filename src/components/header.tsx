@@ -34,6 +34,7 @@ export function Header() {
                         style={{ fontFamily: '"Red Rose", serif' }}
                         role="heading"
                         aria-level={1}
+                        onClick={() => navigate('/home')}
                     >
                         JAVA'S
                     </span>

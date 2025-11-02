@@ -1,9 +1,13 @@
 import productimg from './imgs/Rectangle 4.png';
 import subimg from './imgs/Rectangle 4.png';
-import  ProductSelection from '../../components/productselection';
+import ProductSelection from '../../components/productselection'
+
+
 // import './styles/pbodycontent.css'
 
 export function ProductPage() {
+
+    const images = [productimg, productimg, productimg]
 
     return (
         <>
@@ -120,26 +124,21 @@ export function ProductPage() {
                 </div>
             </section> */}
 
-            <ProductSelection/>
 
             <section className="flex flex-col p-[10px] mb-[50px] w-screen">
                 <div className="flex flex-row mt-[75px] mb-[50px] border-2 border-black w-[1785px] h-[575px] ml-[50px] mr-[50px]">
                     <div className="m-[10px] p-[10px] w-[800px]">
                         <div className="mt-[50px] mb-[5px] flex justify-center">
                             <div>
-                                <img className="w-[400px] h-[300px] object-contain" src={productimg} />
+                                <div className="ml-auto mr-auto mt-[0px]">
+                                    <ProductSelection images={images}/>
+                                </div>
+                                {/* <img className="w-[400px] h-[300px] object-contain" src={productimg} /> */}
                             </div>
-                        </div>
-                        <div className="flex flex-row justify-center gap-[10px] mt-[10px]">
-                            
-                            <img className="w-[75px] h-[75px] object-cover" src={subimg} />
-                            <img className="w-[75px] h-[75px] object-cover" src={productimg} />
-                            <img className="w-[75px] h-[75px] object-cover" src={productimg} />
-                            <img className="w-[75px] h-[75px] object-cover" src={productimg} />
                         </div>
                     </div>
 
-                    <div className="m-[10px] w-full flex flex-col p-[10px]">
+                    <div className="m-[10px] w-full flex flex-col p-[10px] ">
                         <label className="font-bold text-[50px]">RAZER Blade 18 GeForce RTX 5070 Ti</label>
                         <label className="font-bold">Product Description: </label>
                         <label>
@@ -163,7 +162,7 @@ export function ProductPage() {
                         <div className="mt-[10px] flex flex-row items-center gap-[10px] w-[70px] bg-[#D9D9D9] rounded-[10px]">
                             <button className="font-bold rounded px-[10px] py-[5px] border-0 cursor-pointer bg-[#F1F1F1]" data-set="decrease" aria-label="decrease quantity">-</button>
                             <div className="w-[100px] flex items-center justify-center">
-                                <label className="w-[100px]" data-set="quantity amount">0</label>
+                                <label className="" data-set="quantity amount">0</label>
                             </div>
                             <button className="font-bold rounded px-[10px] py-[5px] border-0 cursor-pointer bg-black text-white" data-set="increase" aria-label="increase quantity">+</button>
                         </div>
