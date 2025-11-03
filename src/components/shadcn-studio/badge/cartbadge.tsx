@@ -2,9 +2,9 @@ import { ShoppingCartIcon } from 'lucide-react'
 
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
-import CartButton from '../button/cartbutton'
+import CartButton from '@/components/shadcn-studio/button/cartbutton'
 
-import cartimg from '../../../assets/Shopping Bag.png'
+import cartimg from '@/assets/Shopping Bag.png'
 import { useHandleNavigate } from '@/components/HandleNavigate'
 import { useCart } from '@/context/CartContext'
 

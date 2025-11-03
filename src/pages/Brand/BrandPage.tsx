@@ -1,5 +1,5 @@
-import logoicon from './imgs/image 9.png'
-import { ProductCard } from '../../components/product-card'
+import logoicon from '@/assets/image 9.png'
+import { ProductCard } from '@/components/product-card'
 
 
 export function BrandPage() {

@@ -21,7 +21,7 @@ const HeaderIconButton = React.forwardRef<HTMLButtonElement, HeaderIconButtonPro
         onClick={onClick}
         className={
           `p-5 rounded-md bg-white hover:bg-black transition-colors duration-150
-           hover:ring-2 hover:ring-primary/90 hover:ring-offset-2 group`
+           hover:ring-2 hover:ring-primary/90 hover:ring-offset-2 group cursor-pointer`
           + (className ? ` ${className}` : '')
         }
       >

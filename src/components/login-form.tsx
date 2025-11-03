@@ -10,12 +10,17 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 
+import { useHandleNavigate } from "@/components/HandleNavigate"
+
 import photo from "@/pages/Login/LoginPhoto.jpeg"
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+
+  const navigate = useHandleNavigate()
+
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="overflow-hidden p-0">
@@ -53,7 +58,7 @@ export function LoginForm({
                 <Button type="submit">Login</Button>
               </Field>
               <FieldDescription className="text-center">
-                Don&apos;t have an account? <a href="#">Sign up</a>
+                Don&apos;t have an account? <a href="#" onClick={() => navigate('/signup')}>Sign up</a>
               </FieldDescription>
             </FieldGroup>
           </form>

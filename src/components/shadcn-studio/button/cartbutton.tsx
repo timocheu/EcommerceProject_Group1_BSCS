@@ -29,10 +29,10 @@ const CartButton = React.forwardRef<HTMLButtonElement, CartButtonProps>(
           src={src}
           alt={alt}
           className="
-            w-[30px] h-[30px] object-contain
+            !w-[30px] !h-[30px] object-contain
             filter invert-0 brightness-100
             transition-[filter] duration-75 ease-linear
-            group-hover:invert group-hover:brightness-0
+            group-hover:invert group-hover:brightness-0 flex-shrink-0
           "
         />
       </Button>

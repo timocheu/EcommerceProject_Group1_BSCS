@@ -4,12 +4,11 @@ import { useState } from "react";
 import { Counter } from '@/components/ui/shadcn-io/counter';
 
 import { MoveLeft } from 'lucide-react'
-import { CartItemCard } from '../../components/cartitem-card'
-import { useHandleNavigate } from '../../components/HandleNavigate'
+import { CartItemCard } from '@/components/cartitem-card'
+import { useHandleNavigate } from '@/components/HandleNavigate'
 
-import CartBuyNow from '../../components/shadcn-studio/button/cartbuynowbutton'
+import CartBuyNow from '@/components/shadcn-studio/button/cartbuynowbutton'
 import ContinueShoppingButton from '@/components/shadcn-studio/button/continueshoppingbutton'
-import backimg from './imgs/Right Arrow.png'
 
 // Types
 import type { OrderItem } from "@/types";

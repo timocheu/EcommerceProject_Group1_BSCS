@@ -1,5 +1,5 @@
 import * as React from "react"
-import productimg from '../assets/Rectangle 4.png'
+import productimg from '@/assets/Rectangle 4.png'
 
 
 import { Card, CardContent } from "@/components/ui/card"

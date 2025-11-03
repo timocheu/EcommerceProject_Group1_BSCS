@@ -86,7 +86,7 @@ export default function ProductSelection({
           onClick={prev}
           disabled={!canPrev}
           aria-label="Previous"
-          className={`p-2 rounded-full shadow-md mr-4 transition-colors ${canPrev ? "bg-white hover:bg-gray-100" : "opacity-40 cursor-not-allowed bg-white/60"}`}
+          className={`cursor-pointer p-2 rounded-full shadow-md mr-4 transition-colors ${canPrev ? "bg-white hover:bg-gray-100" : "opacity-40 cursor-not-allowed bg-white/60"}`}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-black">
             <path d="M15 6 L9 12 L15 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -149,7 +149,7 @@ export default function ProductSelection({
           onClick={next}
           disabled={!canNext}
           aria-label="Next"
-          className={`p-2 rounded-full shadow-md ml-4 transition-colors ${canNext ? "bg-white hover:bg-gray-100" : "opacity-40 cursor-not-allowed bg-white/60"}`}
+          className={`cursor-pointer p-2 rounded-full shadow-md ml-4 transition-colors ${canNext ? "bg-white hover:bg-gray-100" : "opacity-40 cursor-not-allowed bg-white/60"}`}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-black">
             <path d="M9 6 L15 12 L9 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -164,7 +164,7 @@ export default function ProductSelection({
             <button
               key={i}
               onClick={() => setCenter(i)}
-              className={`flex-shrink-0 rounded-md overflow-hidden transition-all ${active ? "ring-2 ring-offset-2 ring-primary" : "border border-gray-200"} `}
+              className={`cursor-pointer flex-shrink-0 rounded-md overflow-hidden transition-all ${active ? "ring-2 ring-offset-2 ring-primary" : "border border-gray-200"} `}
               style={{ width: 76, height: 76 }}
               aria-label={`Thumbnail ${i + 1}`}
             >

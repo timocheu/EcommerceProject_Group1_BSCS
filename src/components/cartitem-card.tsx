@@ -1,6 +1,6 @@
 import '../pages/Cart/styles/content.css'
-import addimg from '../pages/Cart/imgs/add.png'
-import subtractimg from '../pages/Cart/imgs/Trash.png'
+import addimg from '@/assets/add.png'
+import subtractimg from '@/assets/Trash.png'
 
 type CartItemCardProps = {
   id?: string | number

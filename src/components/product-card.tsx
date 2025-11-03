@@ -1,5 +1,5 @@
 import '../pages/Brand/styles/bpbodycontent.css'
-import ButtonRingHover from '@/components/shadcn-studio/button/button-40'
+import BrandBuynow from '@/components/shadcn-studio/button/brandbuynowbutton'
 import AddButton from '@/components/shadcn-studio/button/addbutton'
 
 export function ProductCard() {
@@ -34,7 +34,7 @@ export function ProductCard() {
                     <AddButton name="Add to cart"/>
 
 
-                    <ButtonRingHover name="Buy now"/>
+                    <BrandBuynow name="Buy now"/>
                 </div>
             </article>
         </>
