@@ -17,7 +17,7 @@ export function Header() {
             <header className="flex items-center justify-self-center justify-between w-95/100 border py-[10px] px-[20px] bg-white">
                 {/* left / nav */}
                 <nav className="flex gap-2.5">
-                    <HeaderButton name="Home" onClick={() => navigate("/")} />
+                    <HeaderButton name="Home" onClick={() => navigate("/EcommerceProject_Group1_BSCS/")} />
                     <HeaderShopOverButton/>
                     <HeaderButton name="Contact" />
                 </nav>
@@ -30,7 +30,7 @@ export function Header() {
                         style={{ fontFamily: '"Red Rose", serif' }}
                         role="heading"
                         aria-level={1}
-                        onClick={() => navigate('/')}
+                        onClick={() => navigate('/EcommerceProject_Group1_BSCS/')}
                     >
                         JAVA'S
                     </span>

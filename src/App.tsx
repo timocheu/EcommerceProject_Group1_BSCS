@@ -21,7 +21,7 @@ function App() {
         <Header />
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/EcommerceProject_Group1_BSCS/" element={<HomePage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/brand" element={<BrandPage />} />
           <Route path="/product" element={<ProductPage />} />
