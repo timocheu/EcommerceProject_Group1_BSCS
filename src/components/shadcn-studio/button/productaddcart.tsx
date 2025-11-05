@@ -9,11 +9,10 @@ interface AddCartButtonProps {
 }
 
 function AddCartButton({ name, onClick }: AddCartButtonProps) {
-    
-      const { addToCart } = useCart()
+
+    const { cartCount } = useCart()
 
     const handleClick = () => {
-        addToCart()
         if (onClick) onClick()
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }

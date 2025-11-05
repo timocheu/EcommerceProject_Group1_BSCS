@@ -13,9 +13,9 @@ const HeaderShopOverButton = () => {
   const navigate = useHandleNavigate()
 
   // Helper: closes popover then navigates
-  const handleClick = (path: string) => {
+  const handleClick = (brand: string) => {
     setOpen(false)
-    navigate(path)
+    navigate(`/brand?name=${encodeURIComponent(brand)}`)
   }
 
   return (
@@ -35,18 +35,18 @@ const HeaderShopOverButton = () => {
       >
         <div className="grid gap-4">
           <div className="space-y-1 flex flex-row justify-around">
-            <HeaderButton name="Infinix" onClick={() => handleClick('/brand')} />
+            <HeaderButton name="Infinix" onClick={() => handleClick('Infinix')} />
             <HeaderButton
               name="Huawei"
               img={huaweilogo}
-              onClick={() => handleClick('/brand')}
+              onClick={() => handleClick('Huawei')}
             />
           </div>
           <div className="flex flex-row justify-center">
             <HeaderButton
               name="Razer"
               img={razerlogo}
-              onClick={() => handleClick('/brand')}
+              onClick={() => handleClick('Razer')}
             />
           </div>
         </div>
