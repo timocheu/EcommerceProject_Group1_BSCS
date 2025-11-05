@@ -27,7 +27,7 @@ export default defineConfig([
       tseslint.configs.recommendedTypeChecked,
       // Alternatively, use this for the stricter rules
       tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
+      // Optionally, add this for the stylistic rules
       tseslint.configs.stylisticTypeChecked,
 
       // Other configs...
