@@ -24,7 +24,7 @@ export function BrandPage() {
     }
 
     const brandData = brandDataMap[brandName] || HuaweiLaptop
-    const brandLogo = brandLogoMap[brandName] || huaweilogo
+    const brandLogo = brandLogoMap[brandName]
 
     const products = Object.values(brandData)
 
@@ -32,7 +32,13 @@ export function BrandPage() {
         <>
             <div className="flex flex-col w-full h-full">
                 <section className="brandtitle-container flex flex-row w-full justify-center items-center gap-[5px] mt-[75px] mb-[75px]">
-                    <img className="brandlogoimg-bp w-[75px] h-[75px]" src={brandLogo} alt={`${brandName}`} />
+                    {brandLogo && (
+                        <img
+                            className="brandlogoimg-bp w-[75px] h-[75px]"
+                            src={brandLogo}
+                            alt={`${brandName}`}
+                        />
+                    )}
                     <label className="bpbrandname-label text-[50px] font-red-rose">{brandName}</label>
                 </section>
 

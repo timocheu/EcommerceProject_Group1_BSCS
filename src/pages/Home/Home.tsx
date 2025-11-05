@@ -118,7 +118,8 @@ export function HomePage() {
                             className="featureitems-container flex flex-col items-center m-4"
                         >
                             <div className="featureitems-img-container flex items-center justify-center rounded-md bg-[radial-gradient(circle,_#ffffff20,_#5757577f)]
-                            cursor-pointer transition-transform hover:scale-105">
+                            cursor-pointer transition-transform hover:scale-105"
+                            onClick={() => navigate('/product', { state: { product } })}>
                                 <img
                                     className="featureitems-img p-4 w-[250px] h-[185px] object-contain cursor-pointer"
                                     src={product.imgs[0]} //  main image
