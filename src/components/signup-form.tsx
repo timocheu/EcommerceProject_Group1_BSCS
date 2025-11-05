@@ -26,29 +26,7 @@ export function SignupForm({
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
-  const [error, setError] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setError("")
-
-    if (password !== confirmPassword) {
-      setError("Passwords do not match")
-      return
-    }
-
-    const users = JSON.parse(localStorage.getItem("users") || "[]")
-    if (users.find((u: any) => u.email === email)) {
-      setError("Email already registered")
-      return
-    }
-
-    users.push({ name, email, password })
-    localStorage.setItem("users", JSON.stringify(users))
-
-    alert("Account created successfully!")
-    navigate("/login")
-  }
 
 
   return (

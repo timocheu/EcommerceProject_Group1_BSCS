@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button'
 
-import { useHandleNavigate } from '@/components/HandleNavigate'
 
 
 interface BrandBuynowProps {
@@ -9,7 +8,6 @@ interface BrandBuynowProps {
 }
 
 function BrandBuynow({name, onClick}: BrandBuynowProps){
-    const navigate = useHandleNavigate()
 
     return (
     <Button className='ring-offset-background hover:ring-primary/90 transition-all duration-300 hover:ring-2 hover:ring-offset-2

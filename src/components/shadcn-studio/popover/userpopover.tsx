@@ -1,4 +1,4 @@
-import React, { useId, useState } from 'react'
+import { useState } from 'react'
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 
@@ -11,7 +11,6 @@ import { useHandleNavigate } from '@/components/HandleNavigate'
 import usericon from '@/assets/User.png'
 
 const UserPopOver = () => {
-  const id = useId()
   const navigate = useHandleNavigate()
   const [open, setOpen] = useState(false)
 

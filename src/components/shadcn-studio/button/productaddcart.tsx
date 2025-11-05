@@ -1,7 +1,6 @@
 
 
 import { Button } from '@/components/ui/button'
-import { useCart } from '@/context/CartContext'
 
 interface AddCartButtonProps {
     name: string
@@ -10,7 +9,6 @@ interface AddCartButtonProps {
 
 function AddCartButton({ name, onClick }: AddCartButtonProps) {
 
-    const { cartCount } = useCart()
 
     const handleClick = () => {
         if (onClick) onClick()

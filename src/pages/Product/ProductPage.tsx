@@ -1,13 +1,11 @@
 import { useLocation } from 'react-router-dom'
 import { useState } from "react";
 
-import productimg from '@/assets/Rectangle 4.png';
 import ProductSelection from '@/components/productselection'
 import BuyNowButton from '@/components/shadcn-studio/button/productbuynowbutton';
 import AddCartButton from '@/components/shadcn-studio/button/productaddcart';
 import { useHandleNavigate } from '@/components/HandleNavigate';
 
-// import './styles/pbodycontent.css'
 
 export function ProductPage() {
 
@@ -52,19 +50,7 @@ export function ProductPage() {
         navigate('/cart', { state: { cartItem, addedAt } });
     };
 
-    const handleBuynow = () => {
-        
-        const buyItem = {
-            id: product.id || product.laptopid?.toString() || Date.now().toString(),
-            name: product.laptopname,
-            price: product.price,
-            image: images[0],
-            quantity: quantity,
-        };
 
-
-        navigate('/checkout', { state: { buyItem } });
-    }
 
 
     return (

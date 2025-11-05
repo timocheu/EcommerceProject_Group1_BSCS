@@ -6,10 +6,7 @@ interface BuynowProps {
 }
 
 function Buynow({ name, onClick }: BuynowProps) {
-  const handleClick = () => {
-    if (onClick) onClick()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+  
 
   return (
     <Button className='ring-offset-background hover:ring-primary/90 transition-all duration-300 hover:ring-2 hover:ring-offset-2

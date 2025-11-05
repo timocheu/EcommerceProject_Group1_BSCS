@@ -1,6 +1,4 @@
-import { ShoppingCartIcon } from 'lucide-react'
 
-import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import CartButton from '@/components/shadcn-studio/button/cartbutton'
 

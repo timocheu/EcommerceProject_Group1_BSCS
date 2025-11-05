@@ -1,4 +1,3 @@
-import * as React from "react"
 import productimg from '@/assets/Rectangle 4.png'
 
 

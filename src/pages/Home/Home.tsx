@@ -1,15 +1,11 @@
 import { useHandleNavigate } from '@/components/HandleNavigate'
 
-import ButtonRingHover from '@/components/shadcn-studio/button/button-40'
 import huaweilogo from '@/assets/image 9.png'
 import laptopimg11 from '@/assets/image 11.png'
 import laptopimg12 from '@/assets/laptop12.png'
 import laptopimg13 from '@/assets/laptop13.png'
 import featureitem from '@/assets/featureitem.png'
-import featureproduct1 from '@/assets/image 2.png'
-import featureproduct2 from '@/assets/image 3.png'
-import featureproduct3 from '@/assets/image 4.png'
-import featureproduct4 from '@/assets/image 6.png'
+
 import razorlogo from '@/assets/Razer-Inc.-Logo-Vector-removebg-preview 1.png'
 import ShopwnowButton from '@/components/shadcn-studio/button/shopnowbutton'
 import Buynow from '@/components/shadcn-studio/button/homebuynowbutton'
@@ -17,7 +13,7 @@ import SeeMoreButton from '@/components/shadcn-studio/button/seemorebutton'
 
 
 
-import { HuaweiLaptop, InfinixLaptop, RazerLaptop } from '@/data/Products'
+import { HuaweiLaptop, InfinixLaptop} from '@/data/Products'
 
 
 const brands = [
