@@ -125,7 +125,7 @@ body {
 
 @keyframes scrollLoop {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* move left by exactly half (first set) */
+  100% { transform: translateX(-50%); } /* move left by exactly half (first set) oh yeah o yeag */
 }
 
 /* utility class used above */

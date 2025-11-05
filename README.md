@@ -13,7 +13,7 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules :
 
 ```js
 export default defineConfig([
@@ -25,7 +25,7 @@ export default defineConfig([
 
       // Remove tseslint.configs.recommended and replace with this
       tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
+      // Alternatively, use this for the stricter rules
       tseslint.configs.strictTypeChecked,
       // Optionally, add this for stylistic rules
       tseslint.configs.stylisticTypeChecked,
