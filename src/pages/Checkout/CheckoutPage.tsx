@@ -15,19 +15,7 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 
-interface OrderItem {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  quantity: number;
-}
-
-interface CheckoutSummary {
-  subtotal: number;
-  tax: number;
-  total: number;
-}
+import type { OrderItem, CheckoutSummary } from "@/types";
 
 export function CheckoutPage() {
   const navigate = useNavigate();

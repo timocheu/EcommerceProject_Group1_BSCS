@@ -93,11 +93,11 @@ export function CartPage() {
 
   return (
     <div className="flex flex-col items-left font-poppins w-screen">
-      <label className="pageTitle-lbl text-[40px] font-red-rose mt-[25px] mb-[50px] ml-[50px]" aria-label="check out">
+      <label className="pageTitle-lbl text-[40px] font-red-rose ml-15 mt-10 " aria-label="check out">
         SHOPPING CART
       </label>
 
-      <main className="relative border border-black w-9/10 p-8 flex flex-col ml-[50px] mb-[50px] h-[1500px]">
+      <main className="relative border border-black w-9/10 p-8 flex flex-col ml-[50px] mb-[50px] min-h-80">
         <div className="cartTop-container flex flex-row justify-between items-center mb-4">
           <label className="text-base">
             My Cart (<span id="cartItemAMT">{cartItems.length}</span>)
