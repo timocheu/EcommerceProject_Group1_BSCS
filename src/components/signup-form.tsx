@@ -1,33 +1,31 @@
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { useState } from "react"
-import { useHandleNavigate } from "@/components/HandleNavigate"
+} from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { useHandleNavigate } from "@/components/HandleNavigate";
 
 export function SignupForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const navigate = useHandleNavigate()
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [confirmPassword, setConfirmPassword] = useState("")
-
-
+  const navigate = useHandleNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
@@ -39,17 +37,36 @@ export function SignupForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault();
+
+              const res = await fetch("/api/signup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, password }),
+              });
+
+              const data = await res.json();
+              if (res.ok) {
+                alert("Account created successfully!");
+                navigate("/login");
+              } else {
+                alert(data.error || "Signup failed");
+              }
+            }}
+          >
             <FieldGroup>
               <Field>
                 <FieldLabel htmlFor="name">Full Name</FieldLabel>
-                <Input 
-                  id="name" 
-                  type="text" 
-                  value={name} 
-                  onChange={(e) => setName(e.target.value)} 
-                  placeholder="John Doe" 
-                  required />
+                <Input
+                  id="name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="John Doe"
+                  required
+                />
               </Field>
               <Field>
                 <FieldLabel htmlFor="email">Email</FieldLabel>
@@ -66,19 +83,25 @@ export function SignupForm({
                 <Field className="grid grid-cols-2 gap-4">
                   <Field>
                     <FieldLabel htmlFor="password">Password</FieldLabel>
-                    <Input id="password"
+                    <Input
+                      id="password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      type="password" required />
+                      type="password"
+                      required
+                    />
                   </Field>
                   <Field>
                     <FieldLabel htmlFor="confirm-password">
                       Confirm Password
                     </FieldLabel>
-                    <Input id="confirm-password" 
+                    <Input
+                      id="confirm-password"
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      type="password" required />
+                      type="password"
+                      required
+                    />
                   </Field>
                 </Field>
                 <FieldDescription>
@@ -86,9 +109,14 @@ export function SignupForm({
                 </FieldDescription>
               </Field>
               <Field>
-                <Button type="submit" className="cursor-pointer">Create Account</Button>
+                <Button type="submit" className="cursor-pointer">
+                  Create Account
+                </Button>
                 <FieldDescription className="text-center">
-                  Already have an account? <a href="#" onClick={() => navigate('/login')}>Sign in</a>
+                  Already have an account?{" "}
+                  <a href="#" onClick={() => navigate("/login")}>
+                    Sign in
+                  </a>
                 </FieldDescription>
               </Field>
             </FieldGroup>
@@ -100,5 +128,5 @@ export function SignupForm({
         and <a href="#">Privacy Policy</a>.
       </FieldDescription>
     </div>
-  )
+  );
 }
