@@ -36,8 +36,8 @@ export function FooterSection({
     {
       title: "About us",
       links: [
-        { text: "Our Story", href: "#"},
-        { text: "Contact us", href: "#" },
+        { text: "Our Story", href: "/contact"},
+        { text: "Contact us", href: "/contact" },
       ],
     },
     {
@@ -49,15 +49,15 @@ export function FooterSection({
     {
       title: "Store",
       links: [
-        { text: "SM Cebu City", href: "#" },
-        { text: "Ayala Business Park", href: "#" },
+        { text: "SM Cebu City", href: "https://www.smsupermalls.com/mall-directory/sm-city-cebu/information" },
+        { text: "Ayala Business Park", href: "https://ayala.com/" },
       ],
     },
   ],
   copyright = "JAVA'S © 2025. All rights reserved",
   policies = [
-    { text: "Privacy Policy", href: "/EcommerceProject_Group1_BSCS/privacy" },
-    { text: "Terms of Service", href: "/EcommerceProject_Group1_BSCS/terms" },
+    { text: "Privacy Policy", href: "/privacy" },
+    { text: "Terms of Service", href: "/terms" },
   ],
   showModeToggle = false,
   className,

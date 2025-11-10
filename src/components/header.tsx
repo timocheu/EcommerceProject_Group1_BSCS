@@ -19,7 +19,7 @@ export function Header() {
                 <nav className="flex gap-2.5">
                     <HeaderButton name="Home" onClick={() => navigate("/EcommerceProject_Group1_BSCS/")} />
                     <HeaderShopOverButton/>
-                    <HeaderButton name="Contact" />
+                    <HeaderButton name="Contact" onClick={() => navigate("/contact")} />
                 </nav>
 
                 {/* center logo */}
