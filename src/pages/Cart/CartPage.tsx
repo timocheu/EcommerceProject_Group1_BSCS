@@ -94,7 +94,7 @@ export function CartPage() {
         SHOPPING CART
       </label>
 
-      <main className="relative border border-black w-9/10 p-8 flex flex-col ml-[50px] mb-[50px] h-[1500px]">
+      <main className="relative border border-black w-9/10 p-8 flex flex-col ml-[50px] mb-[50px]">
         <div className="cartTop-container flex flex-row justify-between items-center mb-4">
           <label className="text-base">
             My Cart (<span id="cartItemAMT">{cartItems.length}</span>)
