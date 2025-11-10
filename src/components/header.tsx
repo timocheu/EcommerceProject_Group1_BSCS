@@ -1,5 +1,3 @@
-
-
 import HeaderButton from '@/components/shadcn-studio/button/headerbutton'
 import UserPopOver from '@/components/shadcn-studio/popover/userpopover'
 import HeaderShopOverButton from '@/components/shadcn-studio/popover/headershopnowpopover'
@@ -8,7 +6,6 @@ import CartBadge from '@/components/shadcn-studio/badge/cartbadge'
 import { useHandleNavigate} from '@/components/HandleNavigate'
 
 export function Header() {
-
     const navigate = useHandleNavigate()
 
     return (

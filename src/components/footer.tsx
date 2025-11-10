@@ -30,38 +30,48 @@ interface FooterProps {
   className?: string;
 }
 
+import { useHandleNavigate } from "@/components/HandleNavigate";
+
 export function FooterSection({
   name = "JAVA'S",
   columns = [
     {
       title: "About us",
       links: [
-        { text: "Our Story", href: "/EcommerceProject_Group1_BSCS/contact"},
+        { text: "Our Story", href: "/EcommerceProject_Group1_BSCS/contact" },
         { text: "Contact us", href: "/EcommerceProject_Group1_BSCS/contact" },
       ],
     },
     {
       title: "Products",
       links: [
-        { text: "Laptops", href: "/EcommerceProject_Group1_BSCS/brand?name=Infinix" },
+        {
+          text: "Laptops",
+          href: "/EcommerceProject_Group1_BSCS/brand?name=Infinix",
+        },
       ],
     },
     {
       title: "Store",
       links: [
-        { text: "SM Cebu City", href: "https://www.smsupermalls.com/mall-directory/sm-city-cebu/information" },
+        {
+          text: "SM Cebu City",
+          href: "https://www.smsupermalls.com/mall-directory/sm-city-cebu/information",
+        },
         { text: "Ayala Business Park", href: "https://ayala.com/" },
       ],
     },
   ],
   copyright = "JAVA'S © 2025. All rights reserved",
   policies = [
-    { text: "Privacy Policy", href: "/privacy" },
-    { text: "Terms of Service", href: "/terms" },
+    { text: "Privacy Policy", href: "/EcommerceProject_Group1_BSCS/privacy" },
+    { text: "Terms of Service", href: "/EcommerceProject_Group1_BSCS/terms" },
   ],
   showModeToggle = false,
   className,
 }: FooterProps) {
+  const navigate = useHandleNavigate();
+
   return (
     <footer className={cn("bg-background w-full px-4", className)}>
       <div className="max-w-container mx-auto">
@@ -69,31 +79,52 @@ export function FooterSection({
           <FooterContent className="pl-10">
             <FooterColumn className="col-span-2 sm:col-span-3 md:col-span-1">
               <div className="flex items-center gap-2">
-                <h3 className="text-5xl font-bold " style={{ fontFamily: '"Red Rose", serif' }}>{name}</h3>
+                <h3
+                  className="text-5xl font-bold "
+                  style={{ fontFamily: '"Red Rose", serif' }}
+                >
+                  {name}
+                </h3>
               </div>
             </FooterColumn>
             {columns.map((column, index) => (
               <FooterColumn key={index}>
                 <h3 className="text-md pt-1 font-semibold">{column.title}</h3>
-                {column.links.map((link, linkIndex) => (
-                  <a
-                    key={linkIndex}
-                    href={link.href}
-                    className="text-muted-foreground text-sm"
-                  >
-                    {link.text}
-                  </a>
-                ))}
+                {column.links.map((link, linkIndex) =>
+                  link.href.startsWith("http") ? (
+                    <a
+                      key={linkIndex}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground text-sm hover:underline"
+                    >
+                      {link.text}
+                    </a>
+                  ) : (
+                    <button
+                      key={linkIndex}
+                      onClick={() => navigate(link.href)}
+                      className="text-muted-foreground text-sm text-left hover:underline"
+                    >
+                      {link.text}
+                    </button>
+                  ),
+                )}
               </FooterColumn>
             ))}
           </FooterContent>
           <FooterBottom>
             <div>{copyright}</div>
             <div className="flex items-center gap-4">
-              {policies.map((policy, index) => (
-                <a key={index} href={policy.href}>
-                  {policy.text}
-                </a>
+              {policies.map((link, index) => (
+                <button
+                  key={index}
+                  onClick={() => navigate(link.href)}
+                  className="cursor-pointer text-muted-foreground text-sm text-left hover:underline"
+                >
+                  {link.text}
+                </button>
               ))}
               {showModeToggle && <ModeToggle />}
             </div>
@@ -103,45 +134,3 @@ export function FooterSection({
     </footer>
   );
 }
-
-// export function Footer() {
-//     return (
-//         <>
-//             <footer className="bg-[linear-gradient(180deg,#ffffff20,#5757577f)] flex flex-col h-[450px] w-screen border">
-//                 <div className="footer-top flex flex-row h-full">
-//                     <div className="footerright-top flex-[2] flex flex-row justify-center items-center h-full text-[75px]"
-//                         style={{ fontFamily: '"Red Rose", serif' }}
-//                     >
-//                         <span className="cursor-pointer">JAVA'S</span>
-//                     </div>
-//
-//                     <div className="footerleft-top flex flex-row justify-evenly items-start flex-[3]">
-//                         <div className="footerleftcontent-top mt-[175px] flex flex-col gap-[10px] items-center justify-center">
-//                             <label className="footercontentheader font-red-rose font-bold text-[25px]">ABOUT US</label>
-//                             <label className="footercontent font-red-rose text-[20px] font-bold cursor-pointer hover:underline">Our story</label>
-//                             <label className="footercontent font-red-rose text-[20px] font-bold cursor-pointer hover:underline">Contact us</label>
-//                         </div>
-//
-//                         <div className="footerleftcontent-top mt-[175px] flex flex-col gap-[10px] items-center justify-center">
-//                             <label className="footercontentheader font-red-rose font-bold text-[25px]">PRODUCTS</label>
-//                             <label className="footercontent font-red-rose text-[20px] font-bold cursor-pointer hover:underline">Laptop</label>
-//                         </div>
-//
-//                         <div className="footerleftcontent-top mt-[175px] flex flex-col gap-[10px] items-center justify-center">
-//                             <label className="footercontentheader font-red-rose font-bold text-[25px]">STORE</label>
-//                             <a href="https://www.smsupermalls.com/mall-directory/sm-city-cebu/information" className="footercontent font-red-rose text-[20px] font-bold cursor-pointer hover:underline">SM Cebu City</a>
-//                             <a href="https://www.ayalamalls.com/" className="footercontent font-red-rose text-[20px] font-bold cursor-pointer hover:underline">Ayala Business Park</a>
-//                         </div>
-//                     </div>
-//                 </div>
-//
-//                 <div className="footer-bottom flex flex-row justify-between px-[20px]">
-//                     <div><label className="font-red-rose text-[15px] font-bold">JAVA'S © All rights reserved</label></div>
-//                     <div><label className="font-red-rose text-[15px] font-bold cursor-pointer hover:underline">Privacy Policy</label></div>
-//                     <div><label className="font-red-rose text-[15px] font-bold cursor-pointer hover:underline">Terms of use</label></div>
-//                     <div><label className="font-red-rose text-[15px] font-bold">Location: Philippines</label></div>
-//                 </div>
-//             </footer>
-//         </>
-//     )
-// }

@@ -55,7 +55,7 @@ export function HomePage() {
 
     // ✅ helper: navigate to brand dynamically
     const handleSeeMore = (brand: string) => {
-        navigate(`/brand?name=${encodeURIComponent(brand)}`)
+        navigate(`/EcommerceProject_Group1_BSCS/brand?name=${encodeURIComponent(brand)}`)
     }
 
     return (
