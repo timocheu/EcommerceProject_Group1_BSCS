@@ -15,6 +15,7 @@ export function CartPage() {
   const { setCartCount } = useCart();
   const processedAddedAtRef = useRef<number | null>(null);
 
+
   const [cartItems, setCartItems] = useState<OrderItem[]>(() => {
     const saved = localStorage.getItem('cartItems');
     if (saved) {
@@ -48,6 +49,8 @@ export function CartPage() {
       },
     ];
   });
+
+  console.log("cartItems:", cartItems);
 
   //  Update localStorage & cartCount whenever cart changes
   useEffect(() => {
