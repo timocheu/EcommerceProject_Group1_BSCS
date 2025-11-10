@@ -43,7 +43,7 @@ export function FooterSection({
     {
       title: "Products",
       links: [
-        { text: "Laptops", href: "/brand" },
+        { text: "Laptops", href: "/EcommerceProject_Group1_BSCS/brand?name=Infinix" },
       ],
     },
     {
@@ -56,8 +56,8 @@ export function FooterSection({
   ],
   copyright = "JAVA'S © 2025. All rights reserved",
   policies = [
-    { text: "Privacy Policy", href: "#" },
-    { text: "Terms of Service", href: "#" },
+    { text: "Privacy Policy", href: "/EcommerceProject_Group1_BSCS/privacy" },
+    { text: "Terms of Service", href: "/EcommerceProject_Group1_BSCS/terms" },
   ],
   showModeToggle = false,
   className,

@@ -15,7 +15,7 @@ const HeaderShopOverButton = () => {
   // Helper: closes popover then navigates
   const handleClick = (brand: string) => {
     setOpen(false)
-    navigate(`/brand?name=${encodeURIComponent(brand)}`)
+    navigate(`EcommerceProject_Group1_BSCS/brand?name=${encodeURIComponent(brand)}`)
   }
 
   return (
