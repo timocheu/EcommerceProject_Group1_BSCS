@@ -121,6 +121,7 @@
 
 body { 
   padding: 0px;
+  overflow-x: hidden;  
 }
 
 @keyframes scrollLoop {

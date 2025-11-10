@@ -60,7 +60,7 @@ export function HomePage() {
 
     return (
         <main id="body-content">
-            <div id="content-container" className="w-screen">
+            <div id="content-container" className="w-screen justify-self-center">
                 {/* ======= Featured Section ======= */}
                 <div
                     id="featureditems-container"
@@ -123,7 +123,7 @@ export function HomePage() {
                                 />
                             </div>
 
-                            <div className="featureitemscontent-container flex flex-col justify-start w-full mt-3">
+                            <div className="featureitemscontent-container flex flex-col justify-start mt-3">
                                 <label className="featureitems-name font-red-rose text-[15px] font-bold text-black">
                                     {product.laptopname}
                                 </label>
@@ -146,9 +146,9 @@ export function HomePage() {
                         </label>
                     </div>
 
-                    <section id="brand-wrapper" className="w-[100%] pl-[20px] pr-[20px] box-border bg-transparent">
+                    <section id="brand-wrapper" className="pl-[20px] pr-[20px] box-border bg-transparent">
                         {/* viewport: hides overflow so page width doesn't change */}
-                        <div className="relative w-full overflow-hidden">
+                        <div className="relative overflow-hidden">
                             {/* track: flex row, contains two back-to-back copies of the brand list */}
                             <div
                                 className="brands-track flex gap-[20px] will-change-transform animate-scrollLoop"

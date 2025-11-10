@@ -55,8 +55,8 @@ export function ProductPage() {
 
     return (
         <>
-            <section className="flex flex-col p-[10px] mb-[50px] w-screen">
-                <div className="flex flex-row mt-[75px] mb-[50px] border-2 border-black w-[95/100] h-[575px] ml-[50px] mr-[50px]">
+            <section className="flex flex-col justify-self-center p-[10px] mb-[50px] w-9/10">
+                <div className="flex flex-row mt-[75px] mb-[50px] border-2 border-black  ml-[50px] mr-[50px]">
                     <div className="m-[10px] p-[10px]">
                         <div className="mt-[50px] mb-[5px] flex justify-center">
                             <div>
