@@ -36,8 +36,8 @@ export function FooterSection({
     {
       title: "About us",
       links: [
-        { text: "Our Story", href: "/contact"},
-        { text: "Contact us", href: "/contact" },
+        { text: "Our Story", href: "/EcommerceProject_Group1_BSCS/contact"},
+        { text: "Contact us", href: "/EcommerceProject_Group1_BSCS/contact" },
       ],
     },
     {
