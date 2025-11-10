@@ -1,36 +1,52 @@
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
+} from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 
-import { useHandleNavigate } from "@/components/HandleNavigate"
+import { useHandleNavigate } from "@/components/HandleNavigate";
 
-import photo from "@/pages/Login/LoginPhoto.jpeg"
+import photo from "@/pages/Login/LoginPhoto.jpeg";
 
-import { useState } from "react"
+import { useState } from "react";
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-
-  const navigate = useHandleNavigate()
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-
-
+  const navigate = useHandleNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="overflow-hidden p-0">
         <CardContent className="grid p-0 md:grid-cols-2">
-          <form className="p-6 md:p-8">
+          <form
+            className="p-6 md:p-8"
+            onSubmit={async (e) => {
+              e.preventDefault();
+
+              const res = await fetch("http://localhost:3000/api/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password }),
+              });
+
+              const data = await res.json();
+              if (res.ok && data.success) {
+                alert("Login successful!");
+                navigate("/"); // redirect to homepage
+              } else {
+                alert(data.error || "Login failed");
+              }
+            }}
+          >
             <FieldGroup>
               <div className="flex flex-col items-center gap-2 text-center">
                 <h1 className="text-2xl font-bold">Welcome to Java's</h1>
@@ -59,18 +75,28 @@ export function LoginForm({
                     Forgot your password?
                   </a>
                 </div>
-                <Input 
-                  id="password" 
-                  type="password" 
+                <Input
+                  id="password"
+                  type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  required />
+                  required
+                />
               </Field>
               <Field>
-                <Button type="submit" className="cursor-pointer" onClick={() => navigate('/')}>Login</Button>
+                <Button
+                  type="submit"
+                  className="cursor-pointer"
+                  onClick={() => navigate("/")}
+                >
+                  Login
+                </Button>
               </Field>
               <FieldDescription className="text-center">
-                Don&apos;t have an account? <a href="#" onClick={() => navigate('/signup')}>Sign up</a>
+                Don&apos;t have an account?{" "}
+                <a href="#" onClick={() => navigate("/signup")}>
+                  Sign up
+                </a>
               </FieldDescription>
             </FieldGroup>
           </form>
@@ -88,5 +114,5 @@ export function LoginForm({
         and <a href="#">Privacy Policy</a>.
       </FieldDescription>
     </div>
-  )
+  );
 }
