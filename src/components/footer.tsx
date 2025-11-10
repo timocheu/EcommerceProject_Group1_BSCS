@@ -105,7 +105,7 @@ export function FooterSection({
                     <button
                       key={linkIndex}
                       onClick={() => navigate(link.href)}
-                      className="text-muted-foreground text-sm text-left hover:underline"
+                      className="cursor-pointer text-muted-foreground text-sm text-left hover:underline"
                     >
                       {link.text}
                     </button>
