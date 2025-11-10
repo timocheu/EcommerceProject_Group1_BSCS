@@ -63,10 +63,11 @@ export function CheckoutPage() {
       return;
     }
 
-
     localStorage.removeItem("lastBuyNowItem");
 
-    navigate("/receipt", { state: { orderItems, summary } });
+    alert("Successfully checkedout the items. Stored already in the database.");
+
+    navigate("/", { state: { orderItems, summary } });
   };
 
   const handleCancel = () => navigate(-1);
